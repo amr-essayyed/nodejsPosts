@@ -17,7 +17,7 @@ app.use(cookieParser());
 // attach all the subprograms to each associated endpoints
 app.use('/', authRoutes)
 app.use('/users', userRoutes); // Mount the router on the root path
-app.put('/posts', postRoutes);
+app.use('/posts', postRoutes);
 
 //todo: listen to event 'DBConnected'
 export default async function startServer() {

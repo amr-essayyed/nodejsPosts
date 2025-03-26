@@ -4,6 +4,7 @@ const ObjectId = mongoose.Schema.ObjectId;
 const postSchema = new mongoose.Schema(
     {
         // _id: ObjectId,
+        user: String,
         postBody: {type: String, required: true},
         DateAdded: Date
     }
