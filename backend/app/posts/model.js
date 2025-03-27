@@ -11,9 +11,22 @@ export async function add(user, postBody){
     }
     catch(er)
     {
-        console.log(er.message);
+        console.log(er);
         return false;
     }
     // .then(()=>true)
     // .catch(e=>{console.error(e.message); return false;})
+}
+
+export async function getAll(){
+    try{
+        const posts = await Post.find();
+        // console.log(posts);
+        
+        return posts;
+    }
+    catch(e){
+        console.error(e);
+        return null;
+    }
 }

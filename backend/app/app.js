@@ -8,6 +8,8 @@ import postRoutes from './posts/routes.js';
 import authRoutes from './auth/routes.js';     
 
 const app = express();                          // instantiate an http server program
+app.set('view engine', 'ejs');
+app.set('views', './backend/app/views')
 
 // attach parsing functions for different requestBody formats
 app.use(bodyParser.json());
@@ -15,7 +17,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // attach all the subprograms to each associated endpoints
-app.use('/', authRoutes)
+app.use(express.static('C:/dev/nodejs_labs/5_postAndChat/backend/public'));
+app.use('/', authRoutes);
 app.use('/users', userRoutes); // Mount the router on the root path
 app.use('/posts', postRoutes);
 

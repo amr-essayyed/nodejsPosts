@@ -11,7 +11,7 @@ export async function add(email, name, password) {
     }
     catch(er)
     {
-        console.log(er.message);
+        console.log(er);
         return false;
     }
     

@@ -1,0 +1,7 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    border: 0.16rem solid rgba(36, 36, 36, 0.895);
+}
