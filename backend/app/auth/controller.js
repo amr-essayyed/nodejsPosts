@@ -49,8 +49,12 @@ export async function login(req, res){
     }
 }
 
+export async function logout(req, res){
+
+}
+
 export async function serverProfilePage(req, res){
     const username = req.username;
     const user = await getUserbyName(username);
-    res.send(user)
+    res.render('../views/profile', {username,})//send(user)
 }
