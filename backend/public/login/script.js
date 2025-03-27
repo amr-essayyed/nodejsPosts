@@ -1,7 +1,7 @@
 function submitForm(){
     const form = document.querySelector('form');
     // const route = '/'+form.id.split('-')[1];
-    const route = location.pathname; // /login/
+    const route = '/auth/login'; //location.pathname; // /login/
     
     const submitBtn = document.getElementById('in-submit');
 

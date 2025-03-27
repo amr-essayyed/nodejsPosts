@@ -5,7 +5,9 @@ import bodyParser from 'body-parser';           // get library of http-request-b
 import cookieParser from "cookie-parser";
 import userRoutes from './users/routes.js';     // get the router (sub program) associated with /users endpoint requests 
 import postRoutes from './posts/routes.js';     
+import profileRoutes from './profile/routes.js';     
 import authRoutes from './auth/routes.js';     
+import mainRutes from './main/routes.js';     
 
 const app = express();                          // instantiate an http server program
 app.set('view engine', 'ejs');
@@ -18,9 +20,13 @@ app.use(cookieParser());
 
 // attach all the subprograms to each associated endpoints
 app.use(express.static('C:/dev/nodejs_labs/5_postAndChat/backend/public'));
-app.use('/', authRoutes);
+app.get('/', mainRutes)
+app.use('/auth', authRoutes);
 app.use('/users', userRoutes); // Mount the router on the root path
 app.use('/posts', postRoutes);
+app.use('/profile', profileRoutes);
+// app.use('/chats', chatRoutes);
+
 
 //todo: listen to event 'DBConnected'
 export default async function startServer() {

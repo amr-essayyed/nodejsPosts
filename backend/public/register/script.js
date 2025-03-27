@@ -1,12 +1,12 @@
 function submitForm(){
     const form = document.querySelector('form');
     // const route = '/'+form.id.split('-')[1];
-    const route = location.pathname;
-    if(location.pathname.startsWith('/register')){
-        route = '/users/'
-    }else{
-        route = location.pathname;
-    }
+    let route = '/users/'; //location.pathname;
+    // if(location.pathname.startsWith('/register')){
+    //     route = 
+    // }else{
+    //     route = location.pathname;
+    // }
     console.log(route);
 
     

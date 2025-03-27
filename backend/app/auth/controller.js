@@ -50,11 +50,8 @@ export async function login(req, res){
 }
 
 export async function logout(req, res){
-
+    res.clearCookie("accessToken");
+    res.status(200).redirect('/'); //!redirect to login page
+    
 }
 
-export async function serverProfilePage(req, res){
-    const username = req.username;
-    const user = await getUserbyName(username);
-    res.render('../views/profile', {username,})//send(user)
-}

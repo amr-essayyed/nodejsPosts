@@ -1,5 +1,5 @@
 import express from 'express';
-import { authorizeMW, login, serverProfilePage } from '../auth/controller.js';
+import { authorizeMW, login } from '../auth/controller.js';
 
 // get fuctionalities from the controller 
 import {addUser, getUsers, deleteUser, updateUsers} from './controller.js'
