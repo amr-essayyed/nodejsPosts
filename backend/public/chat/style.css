@@ -1,0 +1,52 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    /* height: 90vh; */
+    border-radius: 0.4rem;
+    border: 0.16rem solid gainsboro;
+}
+
+main header {
+    padding: 0.4rem;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    height: 80vh;
+    padding: 0.5rem;
+    overflow-y: scroll;
+}
+
+.chat-line {
+    border-radius: 0.4rem;
+    padding: 0.4rem;
+    border: 0.16rem solid gainsboro;
+}
+
+.his-line {
+
+}
+
+.your-line {
+    background-color: lightgrey;
+    text-align: right;
+}
+
+.message-box {
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.4rem;
+
+    width: 100%;
+    /* align-items: stretch; */
+    /* background-color: lightblue; */
+}
+
+.message-box textarea {
+    width: 100%;
+}

@@ -6,8 +6,10 @@ import cookieParser from "cookie-parser";
 import userRoutes from './users/routes.js';     // get the router (sub program) associated with /users endpoint requests 
 import postRoutes from './posts/routes.js';     
 import profileRoutes from './profile/routes.js';     
+import chatRoutes from './chat/routes.js';     
 import authRoutes from './auth/routes.js';     
-import mainRutes from './main/routes.js';     
+import mainRutes from './main/routes.js';
+import {Server} from 'socket.io';
 
 const app = express();                          // instantiate an http server program
 app.set('view engine', 'ejs');
@@ -25,13 +27,16 @@ app.use('/auth', authRoutes);
 app.use('/users', userRoutes); // Mount the router on the root path
 app.use('/posts', postRoutes);
 app.use('/profile', profileRoutes);
-// app.use('/chats', chatRoutes);
+app.use('/chats', chatRoutes);
 
-
+let httpServer;
+export let io;
 //todo: listen to event 'DBConnected'
 export default async function startServer() {
     await connectToDB();
-    app.listen( 8080, ()=>console.log("listening on port 8080") );
+    httpServer = app.listen( 8080, ()=>console.log("listening on port 8080") );
+    io = new Server(httpServer);
+
+    io.on('connection', socket=>console.log("socket: ", socket.id));
 }
 
-//todo: where to put addUser function
